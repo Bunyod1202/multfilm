@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  box-shadow: 0 0 10px #ffffff;
+}
+.lists{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  list-style: none;
+}
+.item-list {
+  padding: 10px 20px;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-radius: 20px;
+  text-decoration: none;
+}
+.item-list-active{
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}

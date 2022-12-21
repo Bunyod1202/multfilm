@@ -1,39 +1,21 @@
-import { useEffect, useState } from "react";
-import { CardList } from "./components/card/cardList/CardList";
-import banner from "./assets/images/rick-morty-collection-banner_1400x.webp"
+
+import { Route, Routes } from "react-router-dom";
 import "./assets/style/main.scss"
+import { CardId } from "./components/cardid/CardId";
+import { Header } from "./components/header/Header";
+import { Apisode } from "./pages/about/Apisode";
+import { Home } from "./pages/home/Home";
 
 function App() {
-  const [data, setData] = useState({
-    data: [],
-    isLoading: true,
-    isError: false,
-  })
-  useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character/?page=1")
-      .then(res => res.json())
-      .then(data => {
-        setData({
-          data:data.results,
-          isLoading: false,
-          isError: false,
-        })
-     })
-    .catch(err => {
-      setData({
-          data:[],
-          isLoading: false,
-          isError: true,
-        })
-     })
-  },[])
+
   return (
     <div className="App">
-      <img className="baanner" src={banner} alt="templat" />
-      {data.isLoading && <p>Loading...</p>}
-      {data.isError && <p>Error :(</p>}
-      {data.data.length > 0 &&  <div className="container"><CardList data={data.data} /></div>}
-     
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/card/:id" element={<CardId />} />
+        <Route path="/apisode" element={<Apisode />} />
+      </Routes>
     </div>
   );
 }

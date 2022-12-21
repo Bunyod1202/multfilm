@@ -1,35 +1,16 @@
 *{
   box-sizing: border-box;
 }
-.cardbox{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.cards{
 
-}
-.cardss{
   display: flex;
  align-items: center;
-margin-top: 200px;
- color:#fff;
- cursor: pointer;
- position: relative;
- border-radius: 10px;
- width: 48%;
-
-padding: 10px;
-background-color: #3c3e44;
-box-shadow: #0000001a 0px 4px 6px -1px, #0000000f 0px 2px 4px -1px;
-margin-bottom: 20px;
- &:hover{
-   color: #fff;
- }
 }
-.card-imgs {
-  width: 400px;
-  height: 400px;
+.card-img {
+  width: 150px;
+  height: 150px;
   border-radius: 8px;
-  margin-right: 50px;
+  margin-right: 20px;
 }
 .card-title {
   margin: 0;
@@ -88,4 +69,21 @@ border-radius: 20px;
 }
 .unknowns{
   background-color: #1d3aba;
+}
+.cards-inner{
+  display: flex;
+  text-decoration:none;
+  color:#fff;
+  cursor: pointer;
+  position: relative;
+  border-radius: 10px;
+  width: 48%;
+
+ padding: 10px;
+ background-color: #3c3e44;
+ box-shadow: #0000001a 0px 4px 6px -1px, #0000000f 0px 2px 4px -1px;
+ margin-bottom: 20px;
+  &:hover{
+    color: #fff;
+  }
 }

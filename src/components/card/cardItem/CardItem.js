@@ -1,9 +1,23 @@
+import { Link } from "react-router-dom";
 import "./carditem.scss";
 
 export const CardItem = ({ item }) => {
 
   return (
-    <li className="card" key={item.id}>
+      <Link className="cards-inner"  to={`card/${item.id}`} >
+    <li className="cards" key={item.id}>
+      {
+        (() => {
+          if (item.status === 'Alive') {
+           return <span className="badge alive">{item.status}</span>
+          } else if (item.status === 'Dead') {
+            return <span className="badge dead">{item.status}</span>
+          } else {
+            return <span className="badge unknowns">{item.status}</span>
+          }
+        })()
+      }
+     
       <img className="card-img" src={item.image} alt="template" />
       <div className="card-content">
         <h3 className="card-title">{item.name}</h3>
@@ -15,6 +29,7 @@ export const CardItem = ({ item }) => {
         <span className="gender">gender:{item.gender}</span>
         </div>
     </li>
+      </Link>
   );
 };
 

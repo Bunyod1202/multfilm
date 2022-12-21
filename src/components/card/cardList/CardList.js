@@ -5,7 +5,7 @@ import { CardItem } from "../cardItem/CardItem";
 export const CardList = ({data}) => {
   return (
     <ul className="list">
-      {data.map(item => <CardItem item={item} />)}
+      {data.map((item,index) => <CardItem key={index} item={item} />)}
     </ul>
   );
 };
