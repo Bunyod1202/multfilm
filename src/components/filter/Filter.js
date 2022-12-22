@@ -4,7 +4,7 @@ import "./filter.scss"
 export const Filter = ({setStatus,setGender,setPagination,setSearch,setSpecies}) => {
   const statusData = ["alive", "dead", "unknown"];
   const genderData = ["male", "female", "unknown", "genderless"];
-  const speciesData = ["species", "human", "alien", "humanoid", "poopybutthole", "mythological", "unknown", "disease", "cronenberg", "animal", "robot", "planet"];
+  const speciesData = [ "human", "alien", "humanoid", "poopybutthole", "mythological", "unknown", "disease", "cronenberg", "animal", "robot", "planet"];
   const clear = () => { setStatus(""); setGender(""); setPagination(1); setSearch("");setSpecies("") }
   return (
     <div>
