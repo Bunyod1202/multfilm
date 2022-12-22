@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import { Apisodlist } from '../../components/apisode/apisodlist/Apisodlist'
-import './apisod.scss'
-export const Apisode = () => {
+import './location.scss'
+export const Location = () => {
   const [data, setData] = useState([])
     const [apisodGroup,setApisodGroup] = useState([])
   const [paginations, setPagination] = useState(1)
   const [options , setOptions] = useState([])
 
-  let episodeapi = `https://rickandmortyapi.com/api/episode/${paginations}`;
-
+  let episodeapi = `https://rickandmortyapi.com/api/location/${paginations}`;
 
   useEffect(() => {
     (async () => {
-    const res = await fetch("https://rickandmortyapi.com/api/episode").then(res => res.json())
+    const res = await fetch("https://rickandmortyapi.com/api/location").then(res => res.json())
+
     const data = await fetch(episodeapi).then((ress) => ress.json());
     setApisodGroup(data)
     const allData = [];
-    data.characters.forEach(characterLink => {
+    data.residents.forEach(characterLink => {
       fetch(characterLink)
         .then(res => res.json())
         .then(singleCharacter => {
         allData.push(singleCharacter);
-        if(allData.length === data.characters.length){
+        if(allData.length === data.residents.length){
           setData(allData);
         }
       })
     });
+    console.log(res);
       setOptions(Array(res.info.count).fill(res.info.count));
       
     })()
@@ -34,7 +35,7 @@ export const Apisode = () => {
     if (evt.target.value === "") return;
     setPagination(evt.target.value);
   }
-console.log(options);
+  // console.log(apisodGroup);
   return (
     <div>
       <h2 className='text-center mt-5'>Episode name: <span className='text-primary'>{apisodGroup?.episode}</span></h2>

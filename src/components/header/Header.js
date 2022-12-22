@@ -20,7 +20,7 @@ export const Header = () => {
           </NavLink>
         </li>
         <li className='list-item'>
-          <NavLink  className ={({isActive})=> isActive ? 'item-list item-list-active':'item-list' }  to="/contact" >
+          <NavLink  className ={({isActive})=> isActive ? 'item-list item-list-active':'item-list' }  to="/location" >
             contact
           </NavLink>
         </li>
